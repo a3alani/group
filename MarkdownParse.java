@@ -54,7 +54,7 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
-            if (closeParen == markdown.length()-3){
+            if (closeParen == markdown.length()-2){
                 if (openBracket==0){
                     break;
                 }
@@ -64,9 +64,9 @@ public class MarkdownParse {
                     break;
                 }
             }
-            // if (closeParen != markdown.length()-1){
-            //     break;
-            // }
+            if (closeParen != markdown.length()-1){
+                break;
+            }
             
         }
         return toReturn;
